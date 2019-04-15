@@ -2,7 +2,9 @@
 * Project Title:
 
 * Project Description:
-
+  Organization tool for marking and cataloging items in 
+  storage containers for easy retrieval of location and 
+  whether an item exists within a user's belongings.
 
 * Team Members:
   Kenney Hersch, Florentina Ilie
@@ -16,10 +18,10 @@
   SQLite3
   
 * Configuration
-  gem install rails
-  mkdir cs362_storage_container
-  cd cs362_storage_container
-  rails new .
+  $ gem install rails
+  $ mkdir cs362_storage_container
+  $ cd cs362_storage_container
+  $ rails new .
   Add rspec-rails gem to the Gemfile:
     group :development, :test do 
       gem "rspec-rails", "~> 3.7.0"
@@ -35,10 +37,13 @@
 * Database initialization
 
 * How to run the test suite
-  Run rspec
+  $ cd .../cs362_storage_container
+  $ rspec 
   
 * Services (job queues, cache servers, search engines, etc.)
+  TDB
 
 * Deployment instructions
+  TDB
 
 * ...
