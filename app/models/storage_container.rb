@@ -1,10 +1,12 @@
 class StorageContainer
+	attr_accessor :items
 
   def initialize
-    
+    @items = []
   end
 
-  def done?
-    true
+  def empty?
+  	items.empty?
   end
+  
 end
