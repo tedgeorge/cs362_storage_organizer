@@ -1,7 +1,8 @@
 class Item
-	attr_accessor :empty
+	attr_accessor :empty, :name
 
 	def initialize
+		@name
 		@packed = true
 	end
 

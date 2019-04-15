@@ -12,4 +12,9 @@ RSpec.describe Item do
 		expect(item).not_to be_packed
 	end
 
+  it "considers an item to have a name of settlers of catan" do
+    item.name = "settlers of catan"
+    expect(item.name).to eq("settlers of catan")
+  end
+  
 end
