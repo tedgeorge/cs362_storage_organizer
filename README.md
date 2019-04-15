@@ -1,5 +1,5 @@
 # README
-* Project Title:
+* Project Title: Super Awesome Useful Storage Organization App
 
 * Project Description:
   Organization tool for marking and cataloging items in 
