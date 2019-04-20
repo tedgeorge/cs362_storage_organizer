@@ -35,6 +35,32 @@
     $ bundle install
     $ rails generate rspec:install
     ```
+
+  Install guard::rspec
+    Add to Gemfile
+    ```
+    group :development, :test do 
+      gem 'guard-rspec', require: false
+    end
+    ```
+    
+    Run
+    ```
+    $ bundle exec guard init rspec
+    ```
+    
+    Add to Guardfile (Most likely replacing "bundle exec spring rspec")
+    ```
+    guard :rspec, cmd: "bundle exec spring rspec" do
+    ...
+    end
+    ```
+
+    Now run guard with rspec with
+    ```
+    $ bundle exec guard
+    ```
+    
     
 * Database creation
   ```
