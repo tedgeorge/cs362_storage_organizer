@@ -1,8 +1,10 @@
 class StorageContainer
-	attr_accessor :items, :name
+	attr_accessor :name, :description
+  attr_reader :items
 
   def initialize
     @name
+    @description
     @items = []
   end
 
@@ -12,5 +14,13 @@ class StorageContainer
   
   def add(item)
     items << item
+  end
+
+  def remove(item)
+    items.delete(item)
+  end
+
+  def have_item?(item)
+    items.include?(item)
   end
 end

@@ -16,7 +16,8 @@
   Ruby  2.6.0
   Rails 5.2.3
   SQLite3
-  
+
+###########################################################  
 * Configuration
   ```
   $ gem install rails
@@ -36,6 +37,7 @@
     $ rails generate rspec:install
     ```
 
+  #######################
   Install guard::rspec
     Add to Gemfile
     ```
@@ -60,7 +62,7 @@
     ```
     $ bundle exec guard
     ```
-    
+  #######################
     
 * Database creation
   ```
@@ -73,7 +75,7 @@
 * How to run the test suite
   ```
   $ cd .../cs362_storage_container
-  $ rspec 
+  $ bundle exec guard
   ```
   
 * Services (job queues, cache servers, search engines, etc.)
