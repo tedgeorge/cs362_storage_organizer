@@ -1,0 +1,11 @@
+<h1>New StorageContainer</h1>
+
+<%= form_for(@project) do |f| %>
+	<%= f.label(:name) %>
+	<%= f.text_field(:name) %>
+	<br />
+	<%= f.label(:items) %>
+	<%= text_area_tag("storage_container[items]") %>
+	<br />
+	<%= f.submit %>
+<% end %>

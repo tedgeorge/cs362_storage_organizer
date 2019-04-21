@@ -1,10 +1,11 @@
-class Item
-	attr_accessor :empty, :name
+class Item < ApplicationRecord
+	belongs_to :storage_container
+	# attr_accessor :empty, :name
 
-	def initialize
-		@name
-		@packed = true
-	end
+	# def initialize
+	# 	@name
+	# 	@packed = true
+	# end
 
 	def delete
 		@packed = false

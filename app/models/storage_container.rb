@@ -1,12 +1,14 @@
-class StorageContainer
-	attr_accessor :name, :description
-  attr_reader :items
+class StorageContainer < ApplicationRecord
+  has_many :items, dependent: :destroy
+  
+	# attr_accessor :name, :description
+ #  attr_reader :items
 
-  def initialize
-    @name
-    @description
-    @items = []
-  end
+  # def initialize
+  #   @name
+  #   @description
+  #   @items = []
+  # end
 
   def empty?
   	items.empty?
