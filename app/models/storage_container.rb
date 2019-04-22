@@ -14,9 +14,9 @@ class StorageContainer < ApplicationRecord
   	items.empty?
   end
   
-  def add(item)
-    items << item
-  end
+  # def add(item)
+  #   items << item
+  # end
 
   def remove(item)
     items.delete(item)

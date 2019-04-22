@@ -8,12 +8,16 @@ class Item < ApplicationRecord
 	# end
 
 	def delete
-		@packed = false
+		self.packed = false
 	end 
 
 	def packed?
-		@packed
+		self.packed
 	end 
+
+	def mark_as_packed
+		self.packed = true
+	end
 
 
 end
