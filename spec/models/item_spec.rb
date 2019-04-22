@@ -1,9 +1,11 @@
 require "rails_helper"
 
 RSpec.describe Item do 
-	let(:test_item) { Item.new }
+	let(:test_item) { Item.new}
 
 	it "considers a new item packed" do
+    # test_item.packed = true;
+    test_item.mark_as_packed
 		expect(test_item).to be_packed
 	end
 
