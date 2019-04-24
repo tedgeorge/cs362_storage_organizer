@@ -1,0 +1,16 @@
+<h1>All StorageContainers</h1>
+<table>
+	<thead>
+		<tr>
+			<td>StorageContainer Name</td>
+			<td>Total StorageContainer Size</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @storage_containers.each do |storage_container|%>
+		<tr>
+			<td><%= storage_container.name%></td>
+		</tr>
+		<% end %>
+	</tbody>>
+</table>
