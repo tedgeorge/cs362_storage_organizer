@@ -19,5 +19,4 @@ class Item < ApplicationRecord
 		self.packed = true
 	end
 
-
 end
