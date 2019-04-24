@@ -25,4 +25,5 @@ class StorageContainer < ApplicationRecord
   def have_item?(item)
     items.include?(item)
   end
+  
 end

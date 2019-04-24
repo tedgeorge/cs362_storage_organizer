@@ -3,6 +3,10 @@ class StorageContainersController < ApplicationController
 		@storage_container = StorageContainer.new
 	end
 
+	def index
+		@storage_containers = StorageContainer.all
+	end
+
 	def create
 		@workflow = CreatesStorageContainer.new(name: params[:storage_container] [:name])
 		@workflow.create
