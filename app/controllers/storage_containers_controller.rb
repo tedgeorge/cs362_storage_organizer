@@ -10,6 +10,11 @@ class StorageContainersController < ApplicationController
 	def create
 		@workflow = CreatesStorageContainer.new(name: params[:storage_container] [:name])
 		@workflow.create
-		redirect_to storage_containers_path
+		if @workflow.success?
+			redirect_to storage_containers_path
+		else
+			@storage_container = @workflow.storage_container
+			render :new
+		end
 	end
 end

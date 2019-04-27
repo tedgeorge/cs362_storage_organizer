@@ -2,7 +2,12 @@ class CreatesStorageContainer
 	attr_accessor :name, :storage_container
 
 	def initialize(name: "")
+		@success = false
 		@name = name
+	end
+
+	def success?
+		@success
 	end
 
 	def build
@@ -12,6 +17,7 @@ class CreatesStorageContainer
 
 	def create
 		build
-		storage_container.save
+		result = storage_container.save
+		@success = result
 	end
 end
