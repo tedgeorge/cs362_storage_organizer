@@ -19,4 +19,8 @@ class Item < ApplicationRecord
 		self.packed = true
 	end
 
+	def edit_name(new_name)
+		self.name = new_name
+	end
+
 end

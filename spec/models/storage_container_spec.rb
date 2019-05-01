@@ -13,12 +13,6 @@ RSpec.describe StorageContainer  do
 		expect(test_storage_container.empty?).to be_falsy
 	end
 
-	# it "marks a storage container empty if it contains no items" do
-	# 	storage_container.items << item
-	# 	item.delete
-	# 	expect(storage_container).to be_empty
-	# end
-
   it "considers a storage container with a name to be board games" do
     test_storage_container.name = "board games"
     expect(test_storage_container.name).to eq("board games")

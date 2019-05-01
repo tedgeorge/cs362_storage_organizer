@@ -19,4 +19,11 @@ RSpec.describe Item do
     expect(test_item.name).to eq("settlers of catan")
   end
   
+  it "allows an item's name to be edited" do
+    test_item.name = "FAKE_item_name"
+    expect(test_item.name).to eq("FAKE_item_name")
+    
+    test_item.edit_name("FAKE_new_item_name")
+    expect(test_item.name).to eq("FAKE_new_item_name")
+  end
 end
