@@ -26,4 +26,10 @@ RSpec.describe Item do
     test_item.edit_name("FAKE_new_item_name")
     expect(test_item.name).to eq("FAKE_new_item_name")
   end
+
+  it "considers an item to have a description" do
+    test_item.description = "FAKE item description"
+    expect(test_item.description).to be_valid
+  end
 end
+
