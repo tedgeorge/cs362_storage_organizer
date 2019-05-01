@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_22_184759) do
+ActiveRecord::Schema.define(version: 2019_05_01_175916) do
 
   create_table "items", force: :cascade do |t|
     t.integer "storage_container_id"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_04_22_184759) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "packed", default: false
+    t.string "description"
     t.index ["storage_container_id"], name: "index_items_on_storage_container_id"
   end
 
