@@ -26,5 +26,13 @@ class StorageContainer < ApplicationRecord
   def have_item?(item)
     items.include?(item)
   end
+
+  def edit_name(name)
+    self.name = name
+  end
+
+  def edit_description(description)
+    self.description = description
+  end
   
 end

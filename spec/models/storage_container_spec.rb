@@ -48,5 +48,17 @@ RSpec.describe StorageContainer  do
     test_not_added_item = Item.new
     expect(test_storage_container.have_item?(test_not_added_item)).to be_falsy
   end
+
+  it "expects to be able to edit the storage container name" do
+    test_storage_container.name = "FAKE_name"
+    test_storage_container.edit_name("FAKE_new_name")
+    expect(test_storage_container.name).to eq("FAKE_new_name")
+  end
+
+  it "expects to be able to edit the storage container description" do
+    test_storage_container.description = "FAKE_description"
+    test_storage_container.edit_description("FAKE_new_description")
+    expect(test_storage_container.description).to eq("FAKE_new_description")
+  end
 end
 	
