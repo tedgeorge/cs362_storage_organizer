@@ -61,5 +61,12 @@ RSpec.describe StorageContainer  do
     test_storage_container.delete
     refute(test_storage_container.accessible == false)
   end
+
+  it "expects to be able to delete an empty container" do
+    expect(test_storage_container.empty?).to be_truthy
+    test_storage_container.delete
+    expect(test_storage_container.accessible). to be_falsy
+  end
+  
 end
 	
