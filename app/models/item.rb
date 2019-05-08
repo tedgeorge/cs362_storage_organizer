@@ -26,3 +26,5 @@ class Item < ApplicationRecord
 	end
 
 end
+
+self.acc = false if self.empty?
