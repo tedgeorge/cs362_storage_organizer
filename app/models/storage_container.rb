@@ -5,6 +5,10 @@ class StorageContainer < ApplicationRecord
   def empty?
   	items.empty?
   end
+
+  def delete
+    self.accessible = false if self.empty?
+  end
   
   def add(item)
     items << item

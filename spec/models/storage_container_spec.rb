@@ -54,5 +54,19 @@ RSpec.describe StorageContainer  do
     test_storage_container.edit_description("FAKE_new_description")
     expect(test_storage_container.description).to eq("FAKE_new_description")
   end
+
+  it "expects to not be able to delete storage container with items" do
+    test_storage_container.add(test_item)
+    expect(test_storage_container.empty?).to be_falsy
+    test_storage_container.delete
+    refute(test_storage_container.accessible == false)
+  end
+
+  it "expects to be able to delete an empty container" do
+    expect(test_storage_container.empty?).to be_truthy
+    test_storage_container.delete
+    expect(test_storage_container.accessible). to be_falsy
+  end
+  
 end
 	
