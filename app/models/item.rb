@@ -27,4 +27,3 @@ class Item < ApplicationRecord
 
 end
 
-self.acc = false if self.empty?

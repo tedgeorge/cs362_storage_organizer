@@ -1,7 +1,6 @@
 FactoryBot.define do 
 	factory :storage_container do
-		name "Summer Clothes"
-		description "Angela's Box"
+		sequence(:name) {|n| "Storage Container #{n}"}
 	end
 
 end

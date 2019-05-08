@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.describe StorageContainer  do 
-	let(:test_storage_container) { StorageContainer.new }
-	let(:test_item) { Item.new }
+	let(:test_storage_container) { FactoryBot.build_stubbed(:test_storage_container) }
+	let(:test_item) { FactoryBot.build_stubbed: item}
 
 	it "considers a storage container with no items to be empty" do
 		expect(test_storage_container.empty?).to be_truthy
