@@ -1,7 +1,12 @@
 FactoryBot.define do 
 	factory :storage_container do
-		name {|n| "Storage Container: #{n}"}
-		description {|d| "Description: #{d}"}
+		name {"Summer Cothes"}
+		description { "Clara's Closet" }
+
+		# factory :empty do
+  #     empty { true }
+  #   end
+
 	end
 
 end
