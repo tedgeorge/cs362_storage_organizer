@@ -5,7 +5,6 @@ RSpec.describe StorageContainer  do
 
 
   describe "without items" do
-  # let(:test_storage_container) { FactoryBot.build_stubbed(:storage_container) }
   	it "considers a storage container without items to be empty" do
   		expect(test_storage_container.empty?).to be_truthy
   	end
@@ -53,7 +52,7 @@ RSpec.describe StorageContainer  do
     end
 
     it "consider a storage container to not have a specific item" do
-      test_not_added_item = Item.new
+      test_not_added_item = FactoryBot.build_stubbed(:item)
       expect(test_storage_container.have_item?(test_not_added_item)).to be_falsy
     end
 
