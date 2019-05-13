@@ -4,11 +4,11 @@ FactoryBot.define do
     description { "Lorem Ipsum for #{:name}"}
 
     factory :packed do
-      packed true
-    end
+      packed { true }
+     end
 
     factory :not_packed do
-      packed false
+      packed { false }
     end
   end
 end

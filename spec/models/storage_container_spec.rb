@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.describe StorageContainer  do 
-	let(:test_storage_container) { FactoryBot.build_stubbed(:test_storage_container) }
-	let(:test_item) { FactoryBot.build_stubbed: item}
+	let(:test_storage_container) { FactoryBot.build_stubbed(:storage_container, name: "Summer Clothes", description: "Clara's Closet") }
+	let(:test_item) { FactoryBot.build_stubbed(:item)}
 
 	it "considers a storage container with no items to be empty" do
 		expect(test_storage_container.empty?).to be_truthy
@@ -13,10 +13,10 @@ RSpec.describe StorageContainer  do
 		expect(test_storage_container.empty?).to be_falsy
 	end
 
-  it "considers a storage container with a name to be board games" do
-    test_storage_container.name = "board games"
-    expect(test_storage_container.name).to eq("board games")
-  end
+  # it "considers a storage container with a name to be board games" do
+  #   # test_storage_container.name = "board games"
+  #   expect(test_storage_container.name).to eq("board games")
+  # end
 
   it "considers a storage container to have a description" do
     test_storage_container.description = "lorem ipsum"
