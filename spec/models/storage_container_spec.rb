@@ -16,7 +16,7 @@ RSpec.describe StorageContainer  do
     end
 
     it "expects to be able to delete an empty container" do
-      test_storage_container = FactoryBot.create(:storage_container)
+      test_storage_container = FactoryBot.build(:storage_container)
       expect(test_storage_container.empty?).to be_truthy
       test_storage_container.delete
       expect(test_storage_container.accessible). to be_falsy
