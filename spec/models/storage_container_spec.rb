@@ -32,6 +32,10 @@ RSpec.describe StorageContainer  do
       expect(test_storage_container.description).to eq("FAKE_new_description")
     end
 
+    it "expects to be slow" do
+      expect(test_storage_container.perform(BigDependency.new)).to eq(42)
+    end
+
   end
 
   describe "with items" do
