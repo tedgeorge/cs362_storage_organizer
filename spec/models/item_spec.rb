@@ -29,7 +29,7 @@ RSpec.describe Item do
 
   it "considers an item to have a description" do
     test_item.description = "FAKE item description"
-    expect(test_item.description).to be_valid
+    refute(test_item.description == "No Description")
   end
 end
 
