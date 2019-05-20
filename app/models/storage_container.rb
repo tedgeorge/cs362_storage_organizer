@@ -29,5 +29,10 @@ class StorageContainer < ApplicationRecord
   def edit_description(description)
     self.description = description
   end
+
+  def perform(big_dependency)
+    big_dependency.execute
+    return 42
+  end
   
 end
