@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_05_01_191558) do
   create_table "storage_containers", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.integer "size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "accessible", default: true
