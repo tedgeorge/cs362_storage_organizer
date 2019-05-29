@@ -30,6 +30,10 @@ class StorageContainer < ApplicationRecord
     self.description = description
   end
 
+  def size
+    items.size
+  end
+
   def perform(big_dependency)
     big_dependency.execute
     return 42
