@@ -1,0 +1,17 @@
+<h1>All Items</h1>
+<table>
+	<thead>
+		<tr>
+			<td>Item Name</td>
+			<td>Storage Container ID</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @items.each do |item| %>
+		<tr>
+			<td><%= item.name%></td>
+			<td><%= item.storage_container_id %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
