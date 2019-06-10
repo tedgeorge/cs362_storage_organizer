@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe StorageContainer  do 
+RSpec.describe StorageContainer  do
   let(:test_storage_container) { FactoryBot.build_stubbed(:storage_container) }
 
 
@@ -67,15 +67,11 @@ RSpec.describe StorageContainer  do
       refute(test_storage_container.accessible == false)
     end
 
+    it "lets you search for an item in a storage container" do
+      test_storage_container = FactoryBot.build(:storage_container, items: [test_item])
+      expect(test_storage_container.search(test_item)).to eq(test_item)
+    end
+
   end
 
 end
-  
-
-  
-
-  
-
-  
-  
-	

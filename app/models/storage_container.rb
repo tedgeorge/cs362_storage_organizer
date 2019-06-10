@@ -9,7 +9,7 @@ class StorageContainer < ApplicationRecord
   def delete
     self.accessible = false if self.empty?
   end
-  
+
   def add(item)
     items << item
   end
@@ -20,6 +20,15 @@ class StorageContainer < ApplicationRecord
 
   def have_item?(item)
     items.include?(item)
+  end
+
+  def search(item)
+    if items.include?(item)
+      index = items.index(item)
+      items[index]
+    else
+      nil
+    end
   end
 
   def edit_name(name)
@@ -34,5 +43,5 @@ class StorageContainer < ApplicationRecord
     big_dependency.execute
     return 42
   end
-  
+
 end
