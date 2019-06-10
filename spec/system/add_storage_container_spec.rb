@@ -29,7 +29,18 @@ RSpec.describe "adding a storage container and item, and performing functions wi
     click_on("Create Storage Container")
     visit storage_containers_path
     click_on("Edit")
-    expect(page).to have_content("Test Clothes")
-    expect(page).to have_content("Test Dress")
+    expect(page).to have_selector("input[value='Test Clothes']")
+    expect(page).to have_selector("input[value='Test Dress']")
+  end
+  
+  it "allows containers to be deleted" do
+    visit new_storage_container_path
+		fill_in "Name", with: "Test Clothes"
+    fill_in "Items", with: "Test Dress"
+    click_on("Create Storage Container")
+    visit storage_containers_path
+    click_on("Delete")
+    expect(page).to_not have_content("Test Clothes")
+    expect(page).to_not have_content("Test Dress")
   end
 end
