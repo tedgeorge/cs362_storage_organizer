@@ -72,6 +72,11 @@ RSpec.describe StorageContainer  do
       expect(test_storage_container.search(test_item)).to eq(test_item)
     end
 
+    it "returns nil when search doesn't find an item" do
+      test_not_added_item = FactoryBot.build_stubbed(:item)
+      expect(test_storage_container.search(test_not_added_item)).to eq(nil)
+    end
+
   end
 
 end
