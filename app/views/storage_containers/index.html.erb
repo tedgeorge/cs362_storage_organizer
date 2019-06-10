@@ -21,6 +21,7 @@
 			</table>
 			</td>
 			<td><%= storage_container.size%></td>
+			<td><%= button_to "Edit", edit_storage_container_path(storage_container), :method => :get %></td>
 		</tr>
 		<% end %>
 	</tbody>

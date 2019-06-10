@@ -19,4 +19,15 @@ RSpec.describe "adding a storage container", type: :system do
 		click_on("Create Storage Container")
 		expect(page).to have_selector(".new_storage_container")
 	end
+  
+  it "allows containers to be edited" do
+    visit new_storage_container_path
+		fill_in "Name", with: "Test Clothes"
+    fill_in "Items", with: "Test Dress"
+    click_on("Create Storage Container")
+    visit storage_containers_path
+    click_on("Edit")
+    expect(page).to have_content("Test Clothes")
+    expect(page).to have_content("Test Dress")
+  end
 end
