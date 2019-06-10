@@ -24,8 +24,7 @@ class StorageContainer < ApplicationRecord
 
   def search(item)
     if items.include?(item)
-      index = items.index(item)
-      items[index]
+      items[items.index(item)]
     else
       nil
     end
