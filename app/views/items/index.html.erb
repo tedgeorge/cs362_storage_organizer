@@ -1,4 +1,10 @@
 <h1>All Items</h1>
+<%= form_tag(items_path method: :get) do %>
+	<%= label(:term, "Search") %>
+	<%= text_field_tag :term, params[:term] %>
+	<%= submit_tag 'Go', name: nil %>
+<% end %>
+</br>
 <table>
 	<thead>
 		<tr>
