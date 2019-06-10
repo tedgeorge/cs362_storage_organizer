@@ -4,8 +4,10 @@
 	<%= f.label(:name) %>
 	<%= f.text_field(:name) %>
 	<br />
-	<%= f.label(:items) %>
-	<%= text_area_tag("storage_container[items]") %>
+	<%= f.fields_for :items do |ff|%>
+		<%= ff.label(:name, "Items") %>
+		<%= ff.text_field(:name, label: "Items") %>
+	<% end %>
 	<br />
 	<%= f.submit "Create Storage Container" %>
 <% end %>

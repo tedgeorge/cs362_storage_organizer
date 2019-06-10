@@ -10,6 +10,14 @@
 		<% @storage_containers.each do |storage_container| %>
 		<tr>
 			<td><%= storage_container.name%></td>
+			<table>
+				<thead><tr><td>Items</td></tr></thead>
+				<tbody>
+					<% storage_container.get_items.each do |item| %>
+						<td><%= item.name%></td>
+					<% end %>
+				</tbody>
+			</table>
 		</tr>
 		<% end %>
 	</tbody>

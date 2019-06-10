@@ -1,6 +1,7 @@
 class StorageContainersController < ApplicationController
 	def new
 		@storage_container = StorageContainer.new
+    @storage_container.items << Item.new
 	end
 
 	def index
