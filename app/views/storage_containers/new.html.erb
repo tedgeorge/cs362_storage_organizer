@@ -6,7 +6,7 @@
 	<br />
 	<%= f.fields_for :items do |ff|%>
 		<%= ff.label(:name, "Items") %>
-		<%= ff.text_field(:name, label: "Items") %>
+		<%= ff.text_field(:name, class: "item_name") %>
 	<% end %>
 	<br />
 	<%= f.submit "Create Storage Container" %>
