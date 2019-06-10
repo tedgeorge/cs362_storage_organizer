@@ -11,7 +11,7 @@ RSpec.describe "adding a storage container and item, and performing functions wi
 		expect(page).to have_content("Summer Clothes")
 		visit items_path
 		expect(page).to have_content("Red Dress")
-		pending "Search", with: "Red Dress"
+		pending fill_in "Search", with: "Red Dress"
 		pending expect(page).to have_content("Red Dress")
 	end
 
