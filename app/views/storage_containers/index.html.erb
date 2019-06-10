@@ -22,6 +22,7 @@
 			</td>
 			<td><%= storage_container.size%></td>
 			<td><%= button_to "Edit", edit_storage_container_path(storage_container), :method => :get %></td>
+			<td><%= button_to "Delete", storage_container, :method => :delete %></td>
 		</tr>
 		<% end %>
 	</tbody>
