@@ -28,7 +28,7 @@ class StorageContainersController < ApplicationController
   end
   
   def storage_container_params
-    params.require(:storage_container).permit(:name, items_attributes: [:name])
+    params.require(:storage_container).permit(:name, items_attributes: [:id, :name])
   end
   
 end
