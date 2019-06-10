@@ -10,7 +10,7 @@ class StorageContainer < ApplicationRecord
   def delete
     self.accessible = false if self.empty?
   end
-  
+
   def add(item)
     items << item
   end
@@ -35,9 +35,13 @@ class StorageContainer < ApplicationRecord
     items
   end
 
+  def size
+    items.size
+  end
+
   def perform(big_dependency)
     big_dependency.execute
     return 42
   end
-  
+
 end

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe StorageContainer  do 
+RSpec.describe StorageContainer  do
   let(:test_storage_container) { FactoryBot.build_stubbed(:storage_container) }
 
 
@@ -60,6 +60,10 @@ RSpec.describe StorageContainer  do
       expect(test_storage_container.have_item?(test_not_added_item)).to be_falsy
     end
 
+    it "considers a storage container with one item to have a size of one" do
+      expect(test_storage_container.size).to be(1)
+    end
+
     it "expects to not be able to delete storage container with items" do
       test_storage_container = FactoryBot.build(:storage_container, items: [test_item])
       expect(test_storage_container.empty?).to be_falsy
@@ -70,12 +74,3 @@ RSpec.describe StorageContainer  do
   end
 
 end
-  
-
-  
-
-  
-
-  
-  
-	
