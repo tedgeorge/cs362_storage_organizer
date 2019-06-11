@@ -1,16 +1,21 @@
-<h1>New StorageContainer</h1>
+<h1>New Storage Container</h1>
 
 <div class="container">
 	<div class="content">
-	<%= form_for(@storage_container) do |f| %>
-		<div><%= f.label(:name) %></div>
-		<%= f.text_field(:name) %>
+		<%= form_for(@storage_container) do |f| %>
+			<div><%= f.label(:name) %></div>
+			<%= f.text_field(:name) %>
+			<br />
+			Items:
+			<div id="item_list"></div>
+			<button id="add_items" type="button" onclick="addItemField()">+</button>
+			<br />
+			<%= f.submit "Create Storage Container" %>
+		<% end %>
 		<br />
-		Items:
-		<div id="item_list"></div>
-		<button id="add_items" type="button" onclick="addItemField()">+</button>
 		<br />
-		<%= f.submit "Create Storage Container" %>
-	<% end %>
+		<br />
+		<br />
+		<a href="http://localhost:3000/storage_containers" id="storage_container">Go back</a>
 	</div>
 </div>

@@ -1,4 +1,5 @@
-<h1>All StorageContainers</h1>
+<h1>Storage Containers</h1>
+<div class="container">
 <%= form_tag(storage_containers_path, method: :get) do %>
 	<%= text_field_tag(:term, params[:term], id: 'Search') %>
 	<%= submit_tag('Search', name: nil, id: 'Submit') %>
@@ -7,15 +8,15 @@
 <table>
 	<thead class="table_header">
 		<tr>
-			<th>StorageContainer Name</th>
-			<th>Total StorageContainer Size</th>
+			<th>Storage Container Name</th>
+			<th>Number of Items</th>
 			<th></th>
 			<th></th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @storage_containers.each do |storage_container| %>
-		<tr class="storage_container_row" onClick="toggleRow('<%= storage_container.id%>')">
+		<tr class="storage_container_row" onclick="toggleRow('<%= storage_container.id%>')">
 			<td>
 			<%= storage_container.name%>
 			<table class="hidden_table" id="<%= storage_container.id%>">
@@ -28,17 +29,17 @@
 			</table>
 			</td>
 			<td><%= storage_container.size%></td>
-			<td><%= button_to "Edit", edit_storage_container_path(storage_container), :method => :get %></td>
-			<td><%= button_to "Delete", storage_container, :method => :delete %></td>
+			<td onclick="event.stopPropagation()"><%= button_to "Edit", edit_storage_container_path(storage_container), :method => :get %></td>
+			<td onclick="event.stopPropagation()"><%= button_to "Delete", storage_container, :method => :delete %></td>
 		</tr>
 		<% end %>
 	</tbody>
 </table>
-<div class="container">
 	<div class="content">
 	<br />
 	<br />
 	<br />
+	<a href="http://localhost:3000/" id="storage_containers">Home</a>
 	<a href="http://localhost:3000/storage_containers/new" id="storage_containers">Add Another Container</a>
 	</div>
 </div>

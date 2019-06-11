@@ -5,6 +5,6 @@ RSpec.describe "tests the home page" do
     visit home_path
     expect(page).to have_content("Storage Organizer")
     click_on("containers")
-    expect(page).to have_content("All StorageContainers")
+    expect(page).to have_content("Storage Containers")
   end
 end
