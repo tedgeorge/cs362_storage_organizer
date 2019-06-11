@@ -1,8 +1,7 @@
 <h1>All Items</h1>
-<%= form_tag(items_path method: :get) do %>
-	<%= label(:term, "Search") %>
-	<%= text_field_tag :term, params[:term] %>
-	<%= submit_tag 'Go', name: nil %>
+<%= form_tag(items_path, method: :get) do %>
+	<%= text_field_tag(:term, params[:term], id: 'Search') %>
+	<%= submit_tag('Search', name: nil, id: 'Submit') %>
 <% end %>
 </br>
 <table>
@@ -14,7 +13,7 @@
 	</thead>
 	<tbody>
 		<% @items.each do |item| %>
-		<tr>
+		<tr class = 'item'>
 			<td><%= item.name%></td>
 			<td><%= item.storage_container_id %></td>
 		</tr>
