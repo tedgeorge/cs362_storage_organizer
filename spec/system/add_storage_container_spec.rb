@@ -2,6 +2,8 @@ require "rails_helper"
 
 
 RSpec.describe "adding a storage container and items", type: :system do
+  Capybara.ignore_hidden_elements = false;
+
 	it "allows a user to create a storage container with one item, and perform various site functions with it" do
 		Capybara.current_driver = Capybara.javascript_driver
 		visit new_storage_container_path

@@ -5,24 +5,26 @@
 <% end %>
 </br>
 <table>
-	<thead>
+	<thead class="table_header">
 		<tr>
-			<td>StorageContainer Name</td>
-			<td>Total StorageContainer Size</td>
+			<th>StorageContainer Name</th>
+			<th>Total StorageContainer Size</th>
+			<th></th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @storage_containers.each do |storage_container| %>
-		<tr>
+		<tr class="storage_container_row" onClick="toggleRow('<%= storage_container.id%>')">
 			<td>
 			<%= storage_container.name%>
-			<table>
-				<thead><tr><td>Items</td></tr></thead>
-			  <tbody>
-				 <% storage_container.get_items.each do |item| %>
-					<td><%= item.name%></td>
-				 <% end %>
-			  </tbody>
+			<table class="hidden_table" id="<%= storage_container.id%>">
+				<thead><tr><th>Items</th></tr></thead>
+				<tbody>
+					<% storage_container.get_items.each do |item| %>
+						<tr><td><%= item.name%></td></tr>
+					<% end %>
+				</tbody>
 			</table>
 			</td>
 			<td><%= storage_container.size%></td>
