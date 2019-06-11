@@ -4,10 +4,8 @@
 	<%= f.label(:name) %>
 	<%= f.text_field(:name) %>
 	<br />
-	<%= f.fields_for :items do |ff|%>
-		<%= ff.label(:name, "Items") %>
-		<%= ff.text_field(:name, class: "item_name") %>
-	<% end %>
+	<div id="item_list"></div>
+	<button id="add_items" type="button" onclick="addItemField()">Add Item</button>
 	<br />
 	<%= f.submit "Create Storage Container" %>
 <% end %>
