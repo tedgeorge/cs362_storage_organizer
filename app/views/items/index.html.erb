@@ -5,15 +5,15 @@
 <% end %>
 </br>
 <table>
-	<thead>
+	<thead class="table_header">
 		<tr>
-			<td>Item Name</td>
-			<td>Storage Container ID</td>
+			<th>Item Name</th>
+			<th>Storage Container ID</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @items.each do |item| %>
-		<tr class = 'item'>
+		<tr class = "item row">
 			<td><%= item.name%></td>
 			<td><%= item.storage_container_id %></td>
 		</tr>
