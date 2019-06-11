@@ -1,4 +1,9 @@
 <h1>All StorageContainers</h1>
+<%= form_tag(storage_containers_path, method: :get) do %>
+	<%= text_field_tag(:term, params[:term], id: 'Search') %>
+	<%= submit_tag('Search', name: nil, id: 'Submit') %>
+<% end %>
+</br>
 <table>
 	<thead>
 		<tr>
