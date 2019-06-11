@@ -16,11 +16,11 @@ body{
 }
 
 div > a {
-	color: #000;
+	color: #fff;
 	border-radius: 5px;
 	font-size: 20px;
 	padding: 12px 24px;
-	background: #3c18b2;
+	background: #000099;
 }
 
 table {
@@ -42,15 +42,17 @@ th {
 }
 
 .storage_container_row {
-	background-color: #3366cc;
+	background-color: lightgray;
+	color: black;
 }
 
 .row {
-	background-color: #3366cc;
+	background-color: lightgray;
+	color: black;
 }
 
 .storage_container_row:hover {
-	background-color: #000080;
+	background-color: gray;
 }
 
 .table_header {
