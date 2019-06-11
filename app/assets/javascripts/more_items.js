@@ -3,7 +3,6 @@ var item_count = 0;
 
 function addItemField() {
    var date = new Date();
-	var item_count = 0;
    var mSec = date.getTime();
 	item_count++;
 	
