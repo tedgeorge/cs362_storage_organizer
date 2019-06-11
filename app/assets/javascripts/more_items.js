@@ -1,10 +1,14 @@
 
 var item_count = 0;
 
-function addItemField() {
-   var date = new Date();
-   var mSec = date.getTime();
-	item_count++;
+function addItemField() {	
+	var i = 0;
+	if(document.getElementById("storage_container_items_attributes_" + i + "_name") != null){
+		while(document.getElementById("storage_container_items_attributes_" + i + "_name") != null){
+			i++;
+		}
+	}
+	item_count = i;
 	
    ItemAttributeId = "storage_container_items_attributes_0_name".replace("0", item_count);
    ItemAttributeName = "storage_container[items_attributes][0][name]".replace("0", item_count);
@@ -21,4 +25,5 @@ function addItemField() {
 	Label.appendChild(document.createElement("BR"))
 
    document.getElementById("item_list").appendChild(Label);
+	item_count++;
 }

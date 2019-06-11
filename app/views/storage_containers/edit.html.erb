@@ -7,5 +7,8 @@
 		<%= ff.text_field(:name, class: "item_name") %>
 	<% end %>
 	<br />
+	<div id="item_list"></div>
+	<button id="add_items" type="button" onclick="addItemField()">+</button>
+	<br />
 	<%= f.submit "Update Storage Container" %>
 <% end %>

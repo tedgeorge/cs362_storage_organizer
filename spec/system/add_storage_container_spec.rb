@@ -7,7 +7,7 @@ RSpec.describe "adding a storage container and items", type: :system do
 		visit new_storage_container_path
 		fill_in "Name", with: "Summer Clothes"
 		click_on("+")
-		fill_in "storage_container_items_attributes_1_name", with: "Red Dress"
+		fill_in "storage_container_items_attributes_0_name", with: "Red Dress"
 		click_on("Create Storage Container")
 		visit storage_containers_path
 		expect(page).to have_content("Summer Clothes")
@@ -32,9 +32,9 @@ RSpec.describe "adding a storage container and items", type: :system do
 		visit new_storage_container_path
 		fill_in "Name", with: "Summer Clothes"
     click_on("+")
-		fill_in "storage_container_items_attributes_1_name", with: "Red Dress"
+		fill_in "storage_container_items_attributes_0_name", with: "Red Dress"
     click_on("+")
-    fill_in "storage_container_items_attributes_2_name", with: "White Dress"
+    fill_in "storage_container_items_attributes_1_name", with: "White Dress"
 		click_on("Create Storage Container")
 		visit storage_containers_path
 		expect(page).to have_content("Summer Clothes")
@@ -62,7 +62,7 @@ RSpec.describe "adding a storage container and items", type: :system do
     visit new_storage_container_path
 		fill_in "Name", with: "Test Clothes"
     click_on("+")
-    fill_in "storage_container_items_attributes_1_name", with: "Test Dress"
+    fill_in "storage_container_items_attributes_0_name", with: "Test Dress"
     click_on("Create Storage Container")
     visit storage_containers_path
     click_on("Edit")
@@ -70,12 +70,27 @@ RSpec.describe "adding a storage container and items", type: :system do
     expect(page).to have_selector("input[value='Test Dress']")
   end
 
+  it "allows adding more items to a container" do
+    Capybara.current_driver = Capybara.javascript_driver
+    visit new_storage_container_path
+		fill_in "Name", with: "Test Clothes"
+    click_on("+")
+    fill_in "storage_container_items_attributes_0_name", with: "Test Dress"
+    click_on("Create Storage Container")
+    visit storage_containers_path
+    click_on("Edit")
+    click_on("+")
+    fill_in "storage_container_items_attributes_1_name", with: "Test Skirt"
+    click_on("Update Storage Container")
+    expect(page).to have_content("Test Skirt")
+  end
+
   it "allows containers to be deleted" do
     Capybara.current_driver = Capybara.javascript_driver
     visit new_storage_container_path
 		fill_in "Name", with: "Test Clothes"
     click_on("+")
-    fill_in "storage_container_items_attributes_1_name", with: "Test Dress"
+    fill_in "storage_container_items_attributes_0_name", with: "Test Dress"
     click_on("Create Storage Container")
     visit storage_containers_path
     click_on("Delete")
