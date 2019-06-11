@@ -3,9 +3,10 @@ require "rails_helper"
 
 RSpec.describe "adding a storage container and items", type: :system do
 	it "allows a user to create a storage container with one item, and perform various site functions with it" do
+		Capybara.current_driver = Capybara.javascript_driver
 		visit new_storage_container_path
 		fill_in "Name", with: "Summer Clothes"
-    click_on("+")
+		click_on("+")
 		fill_in "storage_container_items_attributes_1_name", with: "Red Dress"
 		click_on("Create Storage Container")
 		visit storage_containers_path
@@ -38,7 +39,14 @@ RSpec.describe "adding a storage container and items", type: :system do
 		visit storage_containers_path
 		expect(page).to have_content("Summer Clothes")
 		expect(page).to have_content("Red Dress")
+		expect(page).to have_content("White Dress")
     visit items_path
+		expect(page).to have_content("Red Dress")
+		expect(page).to have_content("White Dress")
+		fill_in 'Search', with: "White Dress"
+		click_on('Submit')
+		expect(page).to have_content("White Dress")
+		expect(page).to_not have_content("Red Dress")
 	end
 
 	it "does not allow a user to create a storage container without a name" do
