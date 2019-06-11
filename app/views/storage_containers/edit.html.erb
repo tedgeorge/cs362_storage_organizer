@@ -1,16 +1,18 @@
-<h1>New Storage Container</h1>
-
+<h1>Edit Storage Container</h1>
 <div class="container">
 	<div class="content">
-		<%= form_for(@storage_container) do |f| %>
-			<div><%= f.label(:name) %></div>
+		<%= form_for @storage_container do |f| %>
+			<%= f.label(:name) %>
 			<%= f.text_field(:name) %>
+			<%= f.fields_for :items do |ff|%>
+				<%= ff.label(:name, "Items") %>
+				<%= ff.text_field(:name, class: "item_name") %>
+			<% end %>
 			<br />
-			Items:
 			<div id="item_list"></div>
 			<button id="add_items" type="button" onclick="addItemField()">+</button>
 			<br />
-			<%= f.submit "Create Storage Container" %>
+			<%= f.submit "Update Storage Container" %>
 		<% end %>
 		<br />
 		<br />

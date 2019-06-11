@@ -1,6 +1,7 @@
 class StorageContainer < ApplicationRecord
   validates :name, presence: true
   has_many :items, dependent: :destroy
+  accepts_nested_attributes_for :items, reject_if: :all_blank
 
   def empty?
   	items.empty?
@@ -28,6 +29,14 @@ class StorageContainer < ApplicationRecord
 
   def edit_description(description)
     self.description = description
+  end
+  
+  def get_items
+    items
+  end
+
+  def size
+    items.size
   end
 
   def size

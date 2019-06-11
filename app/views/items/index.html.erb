@@ -1,0 +1,31 @@
+<h1>All Items</h1>
+<div class="container">
+	<div class = "content">
+	<%= form_tag(items_path, method: :get) do %>
+		<%= text_field_tag(:term, params[:term], id: 'Search') %>
+		<%= submit_tag('Search', name: nil, id: 'Submit') %>
+	<% end %>
+	</br>
+	<table>
+		<thead class="table_header">
+			<tr>
+				<th>Item Name</th>
+				<th>Storage Container Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @items.each do |item| %>
+			<tr class = "item row">
+				<td><%= item.name%></td>
+				<td><%= StorageContainer.find(item.storage_container_id).name %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<br />
+	<br />
+	<br />
+	<br />
+	<a href="http://localhost:3000/" id="storage_containers">Home</a>
+	</div>
+</div>
