@@ -11,8 +11,12 @@ RSpec.describe "adding a storage container and item, and performing functions wi
 		expect(page).to have_content("Summer Clothes")
 		visit items_path
 		expect(page).to have_content("Red Dress")
-		#fill_in "Search", with: "Red Dress"
-		#expect(page).to have_content("Red Dress")
+		fill_in 'Search', with: "None"
+		click_on('Submit')
+		expect(page).to_not have_content("Red Dress")
+		fill_in 'Search', with: "Red Dress"
+		click_on('Submit')
+		expect(page).to have_content("Red Dress")
 	end
 
 	it "does not allow a user to create a storage container without a name" do
